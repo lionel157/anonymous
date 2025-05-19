@@ -22,7 +22,7 @@ def format_dialogue(dialogue, speaker_map):
 
 # Output file path
 output_file = r"...\SoCBT_scores.json"
-summary_file = r"...\SoCBT_dimension_avg.json"  # 新增：维度平均分文件
+summary_file = r"...\SoCBT_dimension_avg.json"
 
 # Initialize output files
 if not os.path.exists(output_file):

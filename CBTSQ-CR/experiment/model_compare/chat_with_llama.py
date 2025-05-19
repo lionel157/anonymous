@@ -138,7 +138,7 @@ for sample in samples:
             print("Therapist response is None, ending conversation.")
             break
 
-        print(f"🟢 Therapist (Step {stage}): {therapist_response}\n")
+        print(f"Therapist (Step {stage}): {therapist_response}\n")
         conversation.append({"role": "assistant", "content": therapist_response})
         current_example["dialogues"].append({
             "speaker": "therapist",

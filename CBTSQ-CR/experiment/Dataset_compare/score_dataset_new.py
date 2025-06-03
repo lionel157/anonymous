@@ -40,11 +40,11 @@ except:
 
 
 dimension_scores = {
-    "emotional_supportiveness": [],
-    "dialogue_naturalness": [],
-    "cognitive_restructuring": [],
-    "therapist_appropriateness": [],
-    "guidance_effectiveness": []
+    "Emotional Support": [],
+    "Dialogue Naturalness": [],
+    "Restructuring Effectiveness": [],
+    "Therapist Adaptability": [],
+    "Guidance Quality": []
 }
 
 for idx, base_data in tqdm(enumerate(baseline_samples), total=len(baseline_samples)):
@@ -73,20 +73,20 @@ for idx, base_data in tqdm(enumerate(baseline_samples), total=len(baseline_sampl
 
 
         values = [
-            score["emotional_supportiveness"],
-            score["dialogue_naturalness"],
-            score["cognitive_restructuring"],
-            score["therapist_appropriateness"],
-            score["guidance_effectiveness"]
+            score["Emotional Support"],
+            score["Dialogue Naturalness"],
+            score["Restructuring Effectiveness"],
+            score["Therapist Adaptability"],
+            score["Guidance Quality"]
         ]
         score["average_score"] = round(sum(values) / len(values), 2)
 
 
-        dimension_scores["emotional_supportiveness"].append(score["emotional_supportiveness"])
-        dimension_scores["dialogue_naturalness"].append(score["dialogue_naturalness"])
-        dimension_scores["cognitive_restructuring"].append(score["cognitive_restructuring"])
-        dimension_scores["therapist_appropriateness"].append(score["therapist_appropriateness"])
-        dimension_scores["guidance_effectiveness"].append(score["guidance_effectiveness"])
+        dimension_scores["Emotional Support"].append(score["Emotional Support"])
+        dimension_scores["Dialogue Naturalness"].append(score["Dialogue Naturalness"])
+        dimension_scores["Restructuring Effectiveness"].append(score["Restructuring Effectiveness"])
+        dimension_scores["Therapist Adaptability"].append(score["Therapist Adaptability"])
+        dimension_scores["Guidance Quality"].append(score["Guidance Quality"])
 
     except Exception as e:
         score = {"error": str(e), "raw": response_text if 'response_text' in locals() else None}
@@ -107,15 +107,15 @@ for idx, base_data in tqdm(enumerate(baseline_samples), total=len(baseline_sampl
 
 dimension_avg = {
     "emotional_supportiveness_avg": round(
-        sum(dimension_scores["emotional_supportiveness"]) / len(dimension_scores["emotional_supportiveness"]), 2),
+        sum(dimension_scores["Emotional Support"]) / len(dimension_scores["Emotional Support"]), 2),
     "dialogue_naturalness_avg": round(
-        sum(dimension_scores["dialogue_naturalness"]) / len(dimension_scores["dialogue_naturalness"]), 2),
+        sum(dimension_scores["Dialogue Naturalness"]) / len(dimension_scores["Dialogue Naturalness"]), 2),
     "cognitive_restructuring_avg": round(
-        sum(dimension_scores["cognitive_restructuring"]) / len(dimension_scores["cognitive_restructuring"]), 2),
+        sum(dimension_scores["Restructuring Effectiveness"]) / len(dimension_scores["Restructuring Effectiveness"]), 2),
     "therapist_appropriateness_avg": round(
-        sum(dimension_scores["therapist_appropriateness"]) / len(dimension_scores["therapist_appropriateness"]), 2),
+        sum(dimension_scores["Therapist Adaptability"]) / len(dimension_scores["Therapist Adaptability"]), 2),
     "guidance_effectiveness_avg": round(
-        sum(dimension_scores["guidance_effectiveness"]) / len(dimension_scores["guidance_effectiveness"]), 2),
+        sum(dimension_scores["Guidance Quality"]) / len(dimension_scores["Guidance Quality"]), 2),
     "total_samples": len(all_scores)
 }
 

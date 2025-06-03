@@ -35,7 +35,7 @@ def convert_dialogues_to_sft_format(input_file, output_file):
             json.dump(item, f_out, ensure_ascii=False)
             f_out.write('\n')
 
-    print(f"✅ Done! Converted {len(sft_samples)} samples saved to {output_file}")
+    print(f"Done! Converted {len(sft_samples)} samples saved to {output_file}")
 
 
 
